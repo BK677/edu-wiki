@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="siteName">EduWiki</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>EduWiki</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+            </ul>
+            <div class="nav-right">
+                <select id="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="en">🇺🇸 English</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                    <option value="zh">🇨🇳 中文</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+                <span id="user-name" class="user-greeting"></span>
+                <a href="#" class="btn btn-logout" id="logout-btn" data-i18n="logout">Çıkış Yap</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- DASHBOARD CONTAINER -->
+    <main class="dashboard-container">
+        <!-- WELCOME SECTION -->
+        <section class="dashboard-hero">
+            <h1 data-i18n="welcome">Hoş geldin</h1>
+            <p>EduWiki eğitim platformuna hoş geldiniz! Yolculuğunuza başlayın.</p>
+        </section>
+
+        <!-- STATS CARDS -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-content">
+                    <h3>Kayıtlı Dersler</h3>
+                    <p class="stat-number" id="enrolled-courses">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-content">
+                    <h3>Öğrenme Süresi</h3>
+                    <p class="stat-number" id="learning-hours">0 saat</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📖</div>
+                <div class="stat-content">
+                    <h3>Makaleler</h3>
+                    <p class="stat-number" id="articles-read">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-content">
+                    <h3>Başarı Oranı</h3>
+                    <p class="stat-number" id="success-rate">%0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-actions">
+            <h2>Hızlı Erişim</h2>
+            <div class="actions-grid">
+                <a href="dersler.html" class="action-card">
+                    <span class="action-icon">🎓</span>
+                    <span class="action-text">Dersleri Keşfet</span>
+                </a>
+                <a href="wiki.html" class="action-card">
+                    <span class="action-icon">📖</span>
+                    <span class="action-text">Makaleleri Oku</span>
+                </a>
+                <a href="#achievements" class="action-card">
+                    <span class="action-icon">🏆</span>
+                    <span class="action-text">Başarıları Gör</span>
+                </a>
+                <a href="#settings" class="action-card">
+                    <span class="action-icon">⚙️</span>
+                    <span class="action-text">Ayarlar</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ENROLLED COURSES -->
+        <section class="enrolled-section">
+            <h2>Kayıtlı Derslerim</h2>
+            <div class="enrolled-grid" id="enrolled-courses-list">
+                <!-- Dinamik olarak doldurulacak -->
+                <div class="empty-state">
+                    <p>Henüz hiçbir dersi kayıt olmadınız.</p>
+                    <a href="dersler.html" class="btn btn-primary">Derslere Göz At</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRESS TRACKING -->
+        <section class="progress-section">
+            <h2>İlerleme Takibi</h2>
+            <div class="progress-container">
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+                    </div>
+                    <p class="progress-label"><span id="progress-percent">0</span>% Tamamlandı</p>
+                </div>
+                <p class="progress-message">Haftalık hedefinizi tamamlayın!</p>
+            </div>
+        </section>
+
+        <!-- ANNOUNCEMENTS -->
+        <section class="announcements">
+            <h2>Duyurular</h2>
+            <div class="announcement-card">
+                <span class="announcement-badge">YENİ</span>
+                <h4>Yeni Ders Eklendi!</h4>
+                <p>Python ile Veri Analizi dersimiz yayınlandı. Hemen katılın!</p>
+                <a href="dersler.html" class="btn btn-small">İncele</a>
+            </div>
+            <div class="announcement-card">
+                <span class="announcement-badge warning">BİLGİ</span>
+                <h4>Etkinlik Takvimi</h4>
+                <p>Bu hafta sonu ücretsiz webinar düzenleniyor.</p>
+                <a href="#" class="btn btn-small">Detaylar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 EduWiki. Tüm hakları saklıdır.</p>
+    </footer>
+    <!-- AI Chat Widget - Sayfanın en altına ekle -->
+<div class="ai-chat-widget" id="ai-chat-widget">
+    <div class="ai-chat-toggle">🤖</div>
+    <div class="ai-chat-window" id="ai-chat-window">
+        <div class="chat-header">
+            <h3>EduWiki AI Asistan</h3>
+            <button class="chat-close">&times;</button>
+        </div>
+        
+        <!-- API Key Ayarları (İlk açılışta göster) -->
+        <div class="api-key-section" id="api-key-section">
+            <p class="api-note">Gemini API anahtarı gerekli!</p>
+            <input type="password" id="gemini-api-key" placeholder="API Key girin...">
+            <small class="api-help">Key sadece sizin tarayıcınızda saklanır</small>
+            <button id="save-api-key" class="btn-save-key">Kaydet</button>
+            <a href="https://aistudio.google.com/apikey" target="_blank" class="get-api-link">Key alın →</a>
+        </div>
+        
+        <!-- Chat Penceresi (Key girildikten sonra) -->
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                👋 Merhaba! Size nasıl yardımcı olabilirim?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Soru sorun..." disabled>
+            <button id="send-btn" disabled>Gönder</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduWiki - Hoş Geldiniz</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1 data-i18n="siteName">EduWiki</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+                <li><a href="giris.html" data-i18n="login">Giriş Yap</a></li>
+                <li><a href="kayit.html" data-i18n="register">Kayıt Ol</a></li>
+            </ul>
+            <select id="language-selector" onchange="changeLanguage(this.value)">
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="en">🇺🇸 English</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="zh">🇨🇳 中文</option>
+                <option value="ko">🇰🇷 한국어</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="heroTitle">EduWiki</h1>
+            <p data-i18n="heroSubtitle">Ücretsiz Eğitim ve Bilgi Platformu</p>
+            <a href="dersler.html" class="btn btn-primary" data-i18n="heroButton">Keşfetmeye Başla</a>
+        </div>
+    </section>
+
+    <!-- DERSLER -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="popularCourses">Popüler Dersler</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 data-i18n="courseProgramming">Programlama Temelleri</h3>
+                    <p data-i18n="courseDesc1">Python ile kodlamaya giriş yap</p>
+                    <span class="badge">Başlangıç</span>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="courseWeb">Web Geliştirme</h3>
+                    <p data-i18n="courseDesc2">HTML, CSS, JavaScript öğren</p>
+                    <span class="badge">Orta</span>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="courseScience">Bilim Tarihi</h3>
+                    <p data-i18n="courseDesc3">Modern bilimin kökenlerini keşfet</p>
+                    <span class="badge">Herkes İçin</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WIKI -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="wikiArticles">Ansiklopedik Makaleler</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Kuantum Mekaniği</h3>
+                    <p>Fiziğin temelleri ve uygulamaları</p>
+                    <a href="wiki.html" class="read-more" data-i18n="readMore">Devamını Oku →</a>
+                </div>
+                <div class="card">
+                    <h3>Sürdürülebilirlik</h3>
+                    <p>Çevre ve gelecek planlaması</p>
+                    <a href="wiki.html" class="read-more" data-i18n="readMore">Devamını Oku →</a>
+                </div>
+                <div class="card">
+                    <h3>Yapay Zeka</h3>
+                    <p>Makine öğrenmesi temelleri</p>
+                    <a href="wiki.html" class="read-more" data-i18n="readMore">Devamını Oku →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3 data-i18n="siteName">EduWiki</h3>
+                <p>Ücretsiz eğitim ve bilgi platformu.</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-i18n="courses">Hızlı Linkler</h4>
+                <ul>
+                    <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                    <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                    <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-i18n="social">Bizi Takip Et</h4>
+                <div class="social-links">
+                    <a href="https://github.com/BK677" target="_blank">GitHub</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                    <a href="mailto:info@eduwiki.com">Email</a>
+                    
+                </div>
+                <div class="footer-section">
+                <a>&copy; EduWiki 2026 - Tüm Hakları Saklıdır</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<!-- ================= GEMINI AI CHATBOT ================= -->
+    <!-- Sohbet Açma/Kapama Butonu -->
+    <button id="ai-chat-toggle" class="ai-toggle-btn" title="AI Asistan ile Sohbet Et">
+        💬 <span>EduWiki AI Asistan</span>
+    </button>
+
+    <!-- Chatbot Penceresi -->
+    <div id="ai-chat-widget" class="ai-widget hidden">
+        <!-- Başlık ve Ayarlar -->
+        <div class="ai-header">
+            <div class="ai-title">
+                <span class="ai-status-dot"></span>
+                <strong>EduWiki AI Asistan</strong>
+            </div>
+            <div class="ai-header-actions">
+                <button id="ai-settings-toggle" title="API Ayarları">⚙️</button>
+                <button id="ai-chat-close" title="Kapat">✖</button>
+            </div>
+        </div>
+
+        <!-- API Key & Model Ayar Paneli -->
+        <div id="ai-settings-panel" class="ai-settings-panel hidden">
+            <label for="ai-api-key">Gemini API Key:</label>
+            <input type="password" id="ai-api-key" placeholder="AIzaSy..." />
+            
+            <label for="ai-model-select">Model Seçimi:</label>
+            <select id="ai-model-select">
+                <option value="gemini-3.5-flash-lite">Gemini 3.5 Flash-Lite</option>
+                <option value="gemini-3.1-flash-lite">Gemini 3.1 Flash-Lite</option>
+            </select>
+            
+            <button id="ai-save-settings" class="btn-save">Kaydet</button>
+        </div>
+
+        <!-- Mesajlaşma Alanı -->
+        <div id="ai-messages" class="ai-messages">
+            <div class="ai-message bot">
+                Merhaba! Ben EduWiki yapay zeka asistanıyım. Sorularınızı yazabilir, mikrofonla konuşabilir veya görsel/dosya yükleyebilirsiniz.
+            </div>
+        </div>
+
+        <!-- Yüklenen Dosya Önizleme -->
+        <div id="ai-file-preview-container" class="ai-file-preview hidden">
+            <span id="ai-file-name">dosya.png</span>
+            <button id="ai-file-remove" title="Dosyayı Kaldır">✕</button>
+        </div>
+
+        <!-- Giriş Alanı -->
+        <div class="ai-input-area">
+            <!-- Dosya Yükleme -->
+            <label for="ai-file-input" class="ai-tool-btn" title="Dosya/Görsel Ekle">
+                📎
+            </label>
+            <input type="file" id="ai-file-input" style="display: none;" accept="image/*,application/pdf,text/*" />
+
+            <!-- Sesle Yazma (Speech-to-Text) -->
+            <button id="ai-voice-btn" class="ai-tool-btn" title="Sesle Yazdır">
+                🎤
+            </button>
+
+            <!-- Metin Alanı -->
+            <textarea id="ai-input-text" placeholder="Bir soru sorun..." rows="1"></textarea>
+
+            <!-- Gönder Butonu -->
+            <button id="ai-send-btn" class="ai-send-btn" title="Gönder">➔</button>
+        </div>
+    </div>
+
+    <!-- STİL KODLARI -->
+    <style>
+        .ai-toggle-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        .ai-toggle-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .ai-widget {
+            position: fixed;
+            bottom: 85px;
+            right: 25px;
+            width: 380px;
+            max-width: 90vw;
+            height: 540px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+            border: 1px solid #e5e7eb;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .ai-widget.hidden {
+            display: none;
+        }
+
+        .ai-header {
+            background: #1e293b;
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ai-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        .ai-status-dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+        }
+        .ai-header-actions button {
+            background: none;
+            border: none;
+            color: #e2e8f0;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 6px;
+        }
+
+        .ai-settings-panel {
+            background: #f8fafc;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 12px;
+        }
+        .ai-settings-panel.hidden { display: none; }
+        .ai-settings-panel input, .ai-settings-panel select {
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-size: 13px;
+        }
+        .ai-settings-panel .btn-save {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 7px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .ai-messages {
+            flex: 1;
+            padding: 14px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #fdfdfd;
+        }
+        .ai-message {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            line-height: 1.45;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+        .ai-message.user {
+            background: #2563eb;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+        .ai-message.bot {
+            background: #f1f5f9;
+            color: #1e293b;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .ai-file-preview {
+            background: #e2e8f0;
+            padding: 6px 12px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ai-file-preview.hidden { display: none; }
+        #ai-file-remove {
+            background: none;
+            border: none;
+            color: #ef4444;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ai-input-area {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 12px;
+            background: #fff;
+            border-top: 1px solid #e5e7eb;
+        }
+        .ai-tool-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 6px;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+        .ai-tool-btn.listening {
+            color: #ef4444;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        #ai-input-text {
+            flex: 1;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 8px 10px;
+            resize: none;
+            font-size: 13.5px;
+            outline: none;
+            font-family: inherit;
+        }
+        #ai-input-text:focus {
+            border-color: #2563eb;
+        }
+        .ai-send-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ai-send-btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
+
+    <!-- JAVASCRIPT KODLARI -->
+    <script>
+        (function() {
+            const toggleBtn = document.getElementById('ai-chat-toggle');
+            const chatWidget = document.getElementById('ai-chat-widget');
+            const closeBtn = document.getElementById('ai-chat-close');
+            const settingsToggle = document.getElementById('ai-settings-toggle');
+            const settingsPanel = document.getElementById('ai-settings-panel');
+            const apiKeyInput = document.getElementById('ai-api-key');
+            const modelSelect = document.getElementById('ai-model-select');
+            const saveSettingsBtn = document.getElementById('ai-save-settings');
+            const messagesContainer = document.getElementById('ai-messages');
+            const inputText = document.getElementById('ai-input-text');
+            const sendBtn = document.getElementById('ai-send-btn');
+            const voiceBtn = document.getElementById('ai-voice-btn');
+            const fileInput = document.getElementById('ai-file-input');
+            const filePreview = document.getElementById('ai-file-preview-container');
+            const fileNameSpan = document.getElementById('ai-file-name');
+            const fileRemoveBtn = document.getElementById('ai-file-remove');
+
+            // Kayıtlı Ayarlar (Varsayılan: gemini-3.5-flash-lite)
+            let apiKey = localStorage.getItem('gemini_api_key') || '';
+            let selectedModel = localStorage.getItem('gemini_model') || 'gemini-3.5-flash-lite';
+            let attachedFileBase64 = null;
+            let attachedFileMime = null;
+
+            apiKeyInput.value = apiKey;
+            modelSelect.value = selectedModel;
+
+            // Pencere Aç/Kapat
+            toggleBtn.addEventListener('click', () => {
+                chatWidget.classList.toggle('hidden');
+                if (!apiKey) settingsPanel.classList.remove('hidden');
+            });
+            closeBtn.addEventListener('click', () => chatWidget.classList.add('hidden'));
+
+            // Ayarlar Paneli
+            settingsToggle.addEventListener('click', () => {
+                settingsPanel.classList.toggle('hidden');
+            });
+
+            // Ayarları Kaydet
+            saveSettingsBtn.addEventListener('click', () => {
+                apiKey = apiKeyInput.value.trim();
+                selectedModel = modelSelect.value;
+                localStorage.setItem('gemini_api_key', apiKey);
+                localStorage.setItem('gemini_model', selectedModel);
+                settingsPanel.classList.add('hidden');
+                appendMessage('bot', `Model ${selectedModel} olarak ayarlandı ve kaydedildi.`);
+            });
+
+            function appendMessage(sender, text) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `ai-message ${sender}`;
+                msgDiv.textContent = text;
+                messagesContainer.appendChild(msgDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                return msgDiv;
+            }
+
+            // Dosya İşleme (Base64)
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const result = event.target.result;
+                    attachedFileBase64 = result.split(',')[1];
+                    attachedFileMime = file.type;
+                    fileNameSpan.textContent = `📎 ${file.name}`;
+                    filePreview.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            });
+
+            fileRemoveBtn.addEventListener('click', () => {
+                attachedFileBase64 = null;
+                attachedFileMime = null;
+                fileInput.value = '';
+                filePreview.classList.add('hidden');
+            });
+
+            // Sesle Yazdırma (Web Speech API)
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'tr-TR';
+
+                recognition.onstart = () => voiceBtn.classList.add('listening');
+                recognition.onend = () => voiceBtn.classList.remove('listening');
+                recognition.onerror = () => voiceBtn.classList.remove('listening');
+
+                recognition.onresult = (e) => {
+                    const transcript = e.results[0][0].transcript;
+                    inputText.value += (inputText.value ? ' ' : '') + transcript;
+                };
+
+                voiceBtn.addEventListener('click', () => {
+                    if (voiceBtn.classList.contains('listening')) {
+                        recognition.stop();
+                    } else {
+                        recognition.start();
+                    }
+                });
+            } else {
+                voiceBtn.style.display = 'none';
+            }
+
+            // Gemini API Çağrısı
+            async function sendMessage() {
+                const text = inputText.value.trim();
+                if (!text && !attachedFileBase64) return;
+
+                if (!apiKey) {
+                    settingsPanel.classList.remove('hidden');
+                    appendMessage('bot', 'Lütfen çark simgesine tıklayarak Gemini API Anahtarınızı girin.');
+                    return;
+                }
+
+                appendMessage('user', text + (attachedFileBase64 ? ' [Ekli Dosya]' : ''));
+                inputText.value = '';
+
+                const loadingMsg = appendMessage('bot', `${selectedModel} yanıtlıyor...`);
+
+                const parts = [];
+                if (text) parts.push({ text: text });
+                if (attachedFileBase64) {
+                    parts.push({
+                        inline_data: {
+                            mime_type: attachedFileMime,
+                            data: attachedFileBase64
+                        }
+                    });
+                }
+
+                fileRemoveBtn.click();
+
+                try {
+                    // Seçilen 3.5 Flash-Lite veya 3.1 Flash-Lite endpoint'i
+                    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`;
+                    const res = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contents: [{ parts: parts }] })
+                    });
+
+                    const data = await res.json();
+                    if (data.error) {
+                        loadingMsg.textContent = 'Hata: ' + data.error.message;
+                    } else if (data.candidates && data.candidates[0].content) {
+                        loadingMsg.textContent = data.candidates[0].content.parts[0].text;
+                    } else {
+                        loadingMsg.textContent = 'Yanıt alınamadı.';
+                    }
+                } catch (err) {
+                    loadingMsg.textContent = 'Bağlantı hatası: ' + err.message;
+                }
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            sendBtn.addEventListener('click', sendMessage);
+            inputText.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

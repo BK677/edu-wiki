@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makaleler - EduWiki</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1 data-i18n="siteName">EduWiki</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+                <li><a href="giris.html" data-i18n="login">Giriş Yap</a></li>
+                <li><a href="kayit.html" data-i18n="register">Kayıt Ol</a></li>
+            </ul>
+            <select id="language-selector" onchange="changeLanguage(this.value)">
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="en">🇺🇸 English</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="zh">🇨🇳 中文</option>
+                <option value="ko">🇰🇷 한국어</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- WIKI CONTENT -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title" data-i18n="wikiArticles">Ansiklopedik Makaleler</h1>
+            
+            <!-- ARAMA -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Makale ara..."
+                    onkeyup="filterArticles()"
+                >
+            </div>
+            
+            <!-- KATEGORİ FİLTRELERİ -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterCategory('all')">Tüm</button>
+                <button class="filter-btn" onclick="filterCategory('science')">Bilim</button>
+                <button class="filter-btn" onclick="filterCategory('technology')">Teknoloji</button>
+                <button class="filter-btn" onclick="filterCategory('history')">Tarih</button>
+                <button class="filter-btn" onclick="filterCategory('culture')">Kültür</button>
+            </div>
+            
+            <!-- MAKALE LİSTESİ -->
+            <div class="articles-grid" id="articles-list">
+                <!-- Makale 1 -->
+                <article class="article-card" data-category="science">
+                    <div class="article-header">
+                        <span class="article-badge science-tag">Bilim</span>
+                    </div>
+                    <h3>Kuantum Mekaniği</h3>
+                    <p>Fiziğin en temel alanlarından biri olan kuantum mekaniği, atom altı parçacıkların davranışını inceler.</p>
+                    <div class="article-footer">
+                        <span class="read-time">~15 dk okuma</span>
+                        <a href="#" class="read-more-btn">Devamını Oku →</a>
+                    </div>
+                </article>
+                
+                <!-- Makale 2 -->
+                <article class="article-card" data-category="technology">
+                    <div class="article-header">
+                        <span class="article-badge tech-tag">Teknoloji</span>
+                    </div>
+                    <h3>Yapay Zeka</h3>
+                    <p>Makine öğrenmesi ve derin öğrenme teknikleriyle bilgisayarların insan benzeri düşünme yeteneği.</p>
+                    <div class="article-footer">
+                        <span class="read-time">~20 dk okuma</span>
+                        <a href="#" class="read-more-btn">Devamını Oku →</a>
+                    </div>
+                </article>
+                
+                <!-- Makale 3 -->
+                <article class="article-card" data-category="history">
+                    <div class="article-header">
+                        <span class="article-badge history-tag">Tarih</span>
+                    </div>
+                    <h3>Endüstri Devrimi</h3>
+                    <p>18. yüzyılda başlayan teknolojik ve ekonomik dönüşümün dünya tarihine etkileri.</p>
+                    <div class="article-footer">
+                        <span class="read-time">~12 dk okuma</span>
+                        <a href="#" class="read-more-btn">Devamını Oku →</a>
+                    </div>
+                </article>
+                
+                <!-- Makale 4 -->
+                <article class="article-card" data-category="science">
+                    <div class="article-header">
+                        <span class="article-badge science-tag">Bilim</span>
+                    </div>
+                    <h3>Evren ve Büyük Patlama</h3>
+                    <p>Evrenin oluşumu, genişlemesi ve geleceğine dair modern kozmolojinin bulguları.</p>
+                    <div class="article-footer">
+                        <span class="read-time">~18 dk okuma</span>
+                        <a href="#" class="read-more-btn">Devamını Oku →</a>
+                    </div>
+                </article>
+                
+                <!-- Makale 5 -->
+                <article class="article-card" data-category="culture">
+                    <div class="article-header">
+                        <span class="article-badge culture-tag">Kültür</span>
+                    </div>
+                    <h3>Anadolu Medeniyetleri</h3>
+                    <p>Türkiye topraklarında kurulmuş antik medeniyetlerin kültür ve tarihsel mirası.</p>
+                    <div class="article-footer">
+                        <span class="read-time">~25 dk okuma</span>
+                        <a href="#" class="read-more-btn">Devamını Oku →</a>
+                    </div>
+                </article>
+                
+                <!-- Makale 6 -->
+                <article class="article-card" data-category="technology">
+                    <div class="article-header">
+                        <span class="article-badge tech-tag">Teknoloji</span>
+                    </div>
+                    <h3>Bulut Bilişim</h3>
+                    <p>Verilerin uzak sunucularda saklanması ve internet üzerinden erişimi.</p>
+                    <div class="article-footer">
+                        <span class="read-time">~10 dk okuma</span>
+                        <a href="#" class="read-more-btn">Devamını Oku →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- SONUC GOSTERME -->
+            <div class="results-info">
+                <p id="result-count">Toplam 6 makale bulundu</p>
+            </div>
+            
+        </div>
+        <!-- MODAL (POPUP) -->
+<div id="article-modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2 id="modal-title">Makale Başlığı</h2>
+        <span class="modal-badge" id="modal-badge">Bilim</span>
+        <div class="modal-body" id="modal-body">
+            <!-- İçerik buraya -->
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="siteName">EduWiki</h3>
+                    <p>Ücretsiz eğitim ve bilgi platformu.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="courses">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                        <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                        <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

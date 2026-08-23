@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dersler - EduWiki</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1 data-i18n="siteName">EduWiki</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+                <li><a href="giris.html" data-i18n="login">Giriş Yap</a></li>
+                <li><a href="kayit.html" data-i18n="register">Kayıt Ol</a></li>
+            </ul>
+            <select id="language-selector" onchange="changeLanguage(this.value)">
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="en">🇺🇸 English</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="zh">🇨🇳 中文</option>
+                <option value="ko">🇰🇷 한국어</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- DERSLER İÇERİĞİ -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title" data-i18n="popularCourses">Popüler Dersler</h1>
+            
+            <!-- ARAMA -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Ders ara..."
+                    onkeyup="filterCourses()"
+                >
+            </div>
+            
+            <!-- KATEGORİ FİLTRELERİ -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterCategory('all')">Tüm</button>
+                <button class="filter-btn" onclick="filterCategory('programming')">Programlama</button>
+                <button class="filter-btn" onclick="filterCategory('web')">Web</button>
+                <button class="filter-btn" onclick="filterCategory('science')">Bilim</button>
+                <button class="filter-btn" onclick="filterCategory('math')">Matematik</button>
+                <button class="filter-btn" onclick="filterCategory('design')">Tasarım</button>
+            </div>
+            
+            <!-- DERS LİSTESİ -->
+            <div class="courses-grid" id="courses-list">
+                <!-- Ders 1 -->
+                <article class="course-card" data-category="programming">
+                    <div class="course-thumbnail">
+                        <div class="thumbnail-placeholder">🐍</div>
+                        <span class="duration">12 saat</span>
+                    </div>
+                    <div class="course-header">
+                        <span class="course-badge beginner-tag">Başlangıç</span>
+                        <span class="course-level">⭐ 4.8</span>
+                    </div>
+                    <h3>Python Programlama</h3>
+                    <p>Python ile sıfırdan ileri seviyeye programlama öğrenin.</p>
+                    <div class="course-footer">
+                        <span class="students">1,234 öğrenci</span>
+                        <button class="enroll-btn" onclick="openCourseModal('python')">Kayıt Ol</button>
+                    </div>
+                </article>
+                
+                <!-- Ders 2 -->
+                <article class="course-card" data-category="web">
+                    <div class="course-thumbnail">
+                        <div class="thumbnail-placeholder">🌐</div>
+                        <span class="duration">18 saat</span>
+                    </div>
+                    <div class="course-header">
+                        <span class="course-badge intermediate-tag">Orta</span>
+                        <span class="course-level">⭐ 4.9</span>
+                    </div>
+                    <h3>Web Geliştirme Bootcamp</h3>
+                    <p>HTML, CSS, JavaScript ile modern web siteleri geliştirin.</p>
+                    <div class="course-footer">
+                        <span class="students">2,456 öğrenci</span>
+                        <button class="enroll-btn" onclick="openCourseModal('web')">Kayıt Ol</button>
+                    </div>
+                </article>
+                
+                <!-- Ders 3 -->
+                <article class="course-card" data-category="science">
+                    <div class="course-thumbnail">
+                        <div class="thumbnail-placeholder">🔬</div>
+                        <span class="duration">8 saat</span>
+                    </div>
+                    <div class="course-header">
+                        <span class="course-badge beginner-tag">Başlangıç</span>
+                        <span class="course-level">⭐ 4.7</span>
+                    </div>
+                    <h3>Fizik Temelleri</h3>
+                    <p>Klasik fizikten kuantuma bilimin temelleri.</p>
+                    <div class="course-footer">
+                        <span class="students">890 öğrenci</span>
+                        <button class="enroll-btn" onclick="openCourseModal('physics')">Kayıt Ol</button>
+                    </div>
+                </article>
+                
+                <!-- Ders 4 -->
+                <article class="course-card" data-category="programming">
+                    <div class="course-thumbnail">
+                        <div class="thumbnail-placeholder">☕</div>
+                        <span class="duration">20 saat</span>
+                    </div>
+                    <div class="course-header">
+                        <span class="course-badge advanced-tag">İleri</span>
+                        <span class="course-level">⭐ 4.6</span>
+                    </div>
+                    <h3>Java ile Nesne Yönelimli Programlama</h3>
+                    <p>Java dilinde OOP prensiplerini derinlemesine öğrenin.</p>
+                    <div class="course-footer">
+                        <span class="students">1,567 öğrenci</span>
+                        <button class="enroll-btn" onclick="openCourseModal('java')">Kayıt Ol</button>
+                    </div>
+                </article>
+                
+                <!-- Ders 5 -->
+                <article class="course-card" data-category="math">
+                    <div class="course-thumbnail">
+                        <div class="thumbnail-placeholder">📐</div>
+                        <span class="duration">15 saat</span>
+                    </div>
+                    <div class="course-header">
+                        <span class="course-badge intermediate-tag">Orta</span>
+                        <span class="course-level">⭐ 4.8</span>
+                    </div>
+                    <h3>Lineer Cebir</h3>
+                    <p>Matrisler, vektörler ve lineer dönüşümler.</p>
+                    <div class="course-footer">
+                        <span class="students">756 öğrenci</span>
+                        <button class="enroll-btn" onclick="openCourseModal('linear')">Kayıt Ol</button>
+                    </div>
+                </article>
+                
+                <!-- Ders 6 -->
+                <article class="course-card" data-category="design">
+                    <div class="course-thumbnail">
+                        <div class="thumbnail-placeholder">🎨</div>
+                        <span class="duration">10 saat</span>
+                    </div>
+                    <div class="course-header">
+                        <span class="course-badge beginner-tag">Başlangıç</span>
+                        <span class="course-level">⭐ 4.9</span>
+                    </div>
+                    <h3>UI/UX Tasarım Temelleri</h3>
+                    <p>Kullanıcı arayüzü ve deneyimi tasarım prensipleri.</p>
+                    <div class="course-footer">
+                        <span class="students">1,890 öğrenci</span>
+                        <button class="enroll-btn" onclick="openCourseModal('uiux')">Kayıt Ol</button>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- SONUC GOSTERME -->
+            <div class="results-info">
+                <p id="result-count">Toplam 6 ders bulundu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSE MODAL -->
+    <div id="course-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="modal-close">&times;</span>
+            <div class="modal-course-header">
+                <h2 id="modal-course-title">Ders Başlığı</h2>
+                <span class="modal-course-badge" id="modal-course-badge">Başlangıç</span>
+            </div>
+            <div class="modal-course-meta">
+                <span>⏱️ <span id="modal-duration"></span></span>
+                <span>⭐ <span id="modal-rating"></span></span>
+                <span>👥 <span id="modal-students"></span></span>
+            </div>
+            <div class="modal-body" id="modal-course-content">
+                <!-- İçerik -->
+            </div>
+            <button class="btn-primary modal-enroll-btn">Ders'e Kayıt Ol</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="siteName">EduWiki</h3>
+                    <p>Ücretsiz eğitim ve bilgi platformu.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="courses">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="site.html" data-i18n="home">Ana Sayfa</a></li>
+                        <li><a href="dersler.html" data-i18n="courses">Dersler</a></li>
+                        <li><a href="wiki.html" data-i18n="articles">Makaleler</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
