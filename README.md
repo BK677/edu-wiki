@@ -253,3 +253,228 @@ EduWiki AI Assistant, Google tarafından resmi olarak geliştirilmiş veya deste
 EduWiki — Bilginin özgür dünyası.
 
 📚 Eğitim · 📰 Makaleler · 🤖 Yapay Zekâ · 🌍 Çoklu Dil
+
+🌍 EduWiki
+
+EduWiki — Bilginin Özgür Dünyası
+
+EduWiki; eğitim, bilim, teknoloji, genel kültür ve farklı konulardaki bilgilendirici makaleleri tek bir platformda sunmayı amaçlayan çok dilli bir eğitim ve makale sitesidir.
+
+Proje, bilgiyi daha erişilebilir hale getirmek ve farklı ülkelerden kullanıcıların kendi dillerinde içeriklere ulaşabilmesini sağlamak amacıyla geliştirilmektedir.
+
+---
+
+🎯 Proje Amacı
+
+EduWiki'nin temel amacı, kullanıcıların çeşitli konularda:
+
+- 📚 Bilgi edinmesini
+- 📰 Makaleler okumasını
+- 🔎 Konu ve içerik aramasını
+- 🎓 Eğitim kaynaklarına ulaşmasını
+- 🌍 Farklı dillerde içerik görüntülemesini
+
+sağlayan modern ve erişilebilir bir platform oluşturmaktır.
+
+EduWiki yalnızca bir makale sitesi değil, zamanla farklı eğitim araçlarını bir araya getiren kapsamlı bir öğrenme platformu olmayı hedeflemektedir.
+
+---
+
+✨ Özellikler
+
+📚 Makale Sistemi
+
+EduWiki'de farklı kategorilerde bilgilendirici ve eğitim amaçlı makaleler bulunabilir.
+
+Örnek kategoriler:
+
+- 🔬 Bilim
+- 💻 Teknoloji
+- 🧮 Matematik
+- 🌍 Tarih ve coğrafya
+- 📖 Dil
+- 🧠 Genel kültür
+- 🎓 Eğitim
+
+---
+
+🔎 Arama Sistemi
+
+Kullanıcılar EduWiki içerisindeki içerikleri arama sistemi üzerinden bulabilir.
+
+Arama sistemi ilerleyen sürümlerde daha gelişmiş filtreleme ve kategori özellikleriyle geliştirilebilir.
+
+---
+
+🌍 Çoklu Dil Desteği
+
+EduWiki 6 dili desteklemektedir:
+
+Dil| Dil
+🇹🇷| Türkçe
+🇬🇧| English
+🇩🇪| Deutsch
+🇸🇦| العربية
+🇰🇷| 한국어
+🇨🇳| 中文
+
+Çoklu dil desteğinin amacı, EduWiki'nin yalnızca Türkiye'deki kullanıcılara değil, dünyanın farklı bölgelerindeki kullanıcılara da ulaşabilmesini sağlamaktır.
+
+---
+
+🎓 8 İstasyonlu Eğitim Sistemi
+
+EduWiki'nin ana menüsünden ayrı bir 8 İstasyonlu Eğitim Sistemine erişilebilir.
+
+Bu sistem EduWiki'den bağımsız olarak geliştirilmekte ve kendi giriş sistemini kullanmaktadır.
+
+EduWiki ile eğitim sistemi arasında doğrudan entegrasyon yerine yönlendirme bağlantısı kullanılmaktadır.
+
+«8 İstasyonlu Eğitim Sistemi şu anda Türkçe olarak hizmet vermektedir.»
+
+Bu yapı sayesinde iki projenin kodları ve kullanıcı sistemleri birbirinden bağımsız tutulabilir.
+
+---
+
+🤖 AI Asistanı
+
+EduWiki ekosisteminde ayrıca EduWiki AI Assistant adlı yapay zekâ destekli bir proje bulunmaktadır.
+
+AI Assistant:
+
+- 🤖 Yapay zekâ ile sohbet
+- 📚 Eğitim desteği
+- ❓ Sorulara cevap verme
+- 💻 Kodlama desteği
+- 🧠 Konu açıklama
+
+gibi özellikler sunmayı amaçlamaktadır.
+
+AI Assistant ayrı bir proje olarak geliştirilebilir ve EduWiki'nin ana kodundan bağımsız tutulabilir.
+
+---
+
+🛠️ Kullanılan Teknolojiler
+
+EduWiki'nin temel web teknolojileri:
+
+- HTML
+- CSS
+- JavaScript
+
+Projenin farklı bölümlerinde kullanılan teknolojiler sürümlere göre değişebilir.
+
+---
+
+📱 Uyumluluk
+
+EduWiki modern web tarayıcılarında çalışacak şekilde geliştirilmektedir.
+
+Desteklenmesi hedeflenen cihazlar:
+
+- 📱 Telefon
+- 📲 Tablet
+- 💻 Dizüstü bilgisayar
+- 🖥️ Masaüstü bilgisayar
+
+---
+
+🔐 Gizlilik
+
+EduWiki kullanıcı gizliliğine önem vermeyi amaçlamaktadır.
+
+Sitede kullanılan özelliklere göre kullanıcı verileri ve üçüncü taraf hizmetleri farklılık gösterebilir.
+
+Kullanıcıların kişisel veya hassas bilgilerini herkese açık alanlarda paylaşmaması önerilir.
+
+EduWiki'nin gerçek kullanımındaki veri toplama ve işleme uygulamaları için projenin yayınlanmış Gizlilik Politikası dikkate alınmalıdır.
+
+---
+
+🔒 Güvenlik
+
+EduWiki açık kaynak olarak geliştirilmektedir.
+
+Projeye API anahtarı, şifre, erişim tokenı veya başka gizli bilgiler eklenmemelidir.
+
+Özellikle:
+
+API_KEY
+PASSWORD
+TOKEN
+SECRET
+
+gibi bilgileri GitHub repository'sine yüklemeyin.
+
+---
+
+🚀 Proje Durumu
+
+EduWiki aktif olarak geliştirilmektedir.
+
+Yeni özellikler, makaleler, tasarım geliştirmeleri ve dil desteği zaman içerisinde eklenmektedir.
+
+Projenin uzun vadeli hedefi, eğitim ve bilgi içeriklerini tek bir modern platformda birleştirmektir.
+
+---
+
+🗺️ Gelecek Planları
+
+Gelecekte eklenebilecek özellikler:
+
+- 🤖 Daha gelişmiş AI entegrasyonu
+- 📚 Daha fazla eğitim içeriği
+- 🌍 Yeni diller
+- 🔎 Gelişmiş arama
+- 🏷️ Gelişmiş kategori sistemi
+- 📝 Kullanıcı katkılı içerikler
+- 🎓 Eğitim araçları
+- 📊 Kullanıcı ilerleme sistemi
+- 🌐 Daha fazla uluslararası içerik
+
+---
+
+🤝 Katkıda Bulunma
+
+Projeye katkıda bulunmak isteyen geliştiriciler repository'yi fork ederek değişikliklerini geliştirebilir ve Pull Request gönderebilir.
+
+Katkı yaparken:
+
+- Kodun okunabilir olmasına
+- Mevcut özelliklerin bozulmamasına
+- Gizli bilgilerin paylaşılmamasına
+- Çoklu dil desteğinin korunmasına
+
+dikkat edilmelidir.
+
+---
+
+📄 Lisans
+
+Bu projenin kullanım ve dağıtım koşulları repository içerisindeki "LICENSE" dosyasında belirtilmiştir.
+
+Repository'de LICENSE dosyası bulunmuyorsa projenin kodlarını yeniden dağıtmadan veya ticari amaçla kullanmadan önce proje sahibinden izin alınmalıdır.
+
+---
+
+🌐 Projeler
+
+🌍 EduWiki
+
+Eğitim ve bilgilendirici makaleler platformu.
+
+🎓 8 İstasyonlu Eğitim Sistemi
+
+EduWiki üzerinden erişilebilen bağımsız eğitim platformu.
+
+🤖 EduWiki AI Assistant
+
+Gemini API kullanan bağımsız yapay zekâ asistanı.
+
+---
+
+🌍 EduWiki
+
+Bilginin Özgür Dünyası
+
+📚 Eğitim · 📰 Makaleler · 🎓 Öğrenme · 🤖 AI · 🌍 Çoklu Dil
